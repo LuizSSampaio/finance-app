@@ -1,3 +1,4 @@
+import 'package:fiancas/global_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:number_display/number_display.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -15,11 +16,6 @@ class _BalanceState extends State<Balance> {
   bool isBalanceVisible = true;
 
   String balanceFormat(double balanceValue) {
-    // String balance = balanceValue.toStringAsFixed(2);
-    // return balance.substring(0, balance.length - 3) +
-    //     ',' +
-    //     balance.substring(balance.length - 2);
-    // balance.replaceFirst('.', ',');
     final display = createDisplay(
       length: (balanceValue.toStringAsFixed(2).length) +
           ((balanceValue.toStringAsFixed(2).length - 3) ~/ 3),
@@ -40,34 +36,22 @@ class _BalanceState extends State<Balance> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+        Text(
           'Saldo Disponível',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-            fontWeight: FontWeight.w900,
-          ),
+          style: balanceStyle(18.0),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.baseline,
           textBaseline: TextBaseline.alphabetic,
           children: [
-            const Text(
+            Text(
               'R\$',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24.0,
-                fontWeight: FontWeight.w900,
-              ),
+              style: balanceStyle(24.0),
             ),
             Text(
               balance(widget.balanceValue, isBalanceVisible),
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 36.0,
-                fontWeight: FontWeight.w900,
-              ),
+              style: balanceStyle(34.0),
             ),
             const SizedBox(
               width: 4,
