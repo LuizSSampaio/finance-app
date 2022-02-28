@@ -1,16 +1,32 @@
-# fiancas
+# Finanças
+This app was created for a project from my entrepreneurship classes.
+## Authors
 
-A new Flutter project.
+- [@LuizSSampaio](https://www.github.com/LuizSSampaio)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Run Locally
 
-A few resources to get you started if this is your first Flutter project:
+Clone the project
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```bash
+  git clone https://github.com/LuizSSampaio/finance-app.git
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Go to the project directory
+
+```bash
+  cd finance-app
+```
+
+Install dependencies
+
+```bash
+  flutter pub get
+```
+
+Run the App
+
+```bash
+  flutter run
+```
