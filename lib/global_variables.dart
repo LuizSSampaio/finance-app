@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-TextStyle balanceStyle(double fontSize) {
+TextStyle balanceStyle({required double fontSize}) {
   return TextStyle(
       color: Colors.white,
       fontSize: fontSize,

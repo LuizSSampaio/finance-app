@@ -1,5 +1,7 @@
 import 'package:fiancas/components/balance.dart';
+import 'package:fiancas/components/general_value_card.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,16 +24,44 @@ class HomePage extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40.0),
-                    topRight: Radius.circular(40.0),
+                    topLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
                   ),
                 ),
-                child: const Center(
-                  child: Text(
-                    'Box',
-                    style: TextStyle(
-                      fontSize: 50.0,
-                    ),
+                child: Padding(
+                  padding: const EdgeInsets.all(22.0),
+                  child: Column(
+                    children: [
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                'Visão geral',
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                              GestureDetector(
+                                onTap: () {},
+                                child: const Icon(FontAwesomeIcons.ellipsisV),
+                              ),
+                            ],
+                          ),
+                          const GeneralValueCard(
+                            revenue: 7735.33,
+                            icon: FontAwesomeIcons.plus,
+                            title: 'Receitas',
+                            iconBackground: Colors.green,
+                          ),
+                          const GeneralValueCard(
+                            revenue: 2312.13,
+                            icon: FontAwesomeIcons.minus,
+                            title: 'Despesas',
+                            iconBackground: Colors.red,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -39,6 +69,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      // bottomNavigationBar: BottomNavigationBar(),
       backgroundColor: const Color(0xFFA20AEA),
     );
   }
