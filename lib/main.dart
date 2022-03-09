@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Finanças Pessoais',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+      theme: ThemeData.dark().copyWith(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color(0xFFA20AEA),
+          secondary: const Color(0xFFA20AEA),
         ),
         // appBarTheme: AppBarTheme(
         //   backgroundColor: Colors.deepPurple.shade500,

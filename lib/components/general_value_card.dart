@@ -1,6 +1,5 @@
 import 'package:fiancas/logic/value_formater.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GeneralValueCard extends StatelessWidget {
   const GeneralValueCard({
@@ -33,8 +32,8 @@ class GeneralValueCard extends StatelessWidget {
           children: [
             Text(title),
             Text(
-              Value().format(revenue),
-              style: const TextStyle(color: Color(0xFF3A3B3C)),
+              format(revenue),
+              style: const TextStyle(color: Color(0xFFBBBBBB)),
             ),
           ],
         ),

@@ -22,44 +22,53 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
-                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20.0),
                     topRight: Radius.circular(20.0),
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(22.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     children: [
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
                             children: [
-                              const Text(
-                                'Visão geral',
-                                style: TextStyle(fontSize: 18.0),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text(
+                                      'Visão geral',
+                                      style: TextStyle(fontSize: 18.0),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {},
+                                      child: const Icon(
+                                          FontAwesomeIcons.ellipsisV),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              GestureDetector(
-                                onTap: () {},
-                                child: const Icon(FontAwesomeIcons.ellipsisV),
+                              const GeneralValueCard(
+                                revenue: 7735.33,
+                                icon: FontAwesomeIcons.plus,
+                                title: 'Receitas',
+                                iconBackground: Colors.green,
+                              ),
+                              const GeneralValueCard(
+                                revenue: 2312.13,
+                                icon: FontAwesomeIcons.minus,
+                                title: 'Despesas',
+                                iconBackground: Colors.red,
                               ),
                             ],
                           ),
-                          const GeneralValueCard(
-                            revenue: 7735.33,
-                            icon: FontAwesomeIcons.plus,
-                            title: 'Receitas',
-                            iconBackground: Colors.green,
-                          ),
-                          const GeneralValueCard(
-                            revenue: 2312.13,
-                            icon: FontAwesomeIcons.minus,
-                            title: 'Despesas',
-                            iconBackground: Colors.red,
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
@@ -69,8 +78,10 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(),
-      backgroundColor: const Color(0xFFA20AEA),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(FontAwesomeIcons.plus),
+      ),
     );
   }
 }
