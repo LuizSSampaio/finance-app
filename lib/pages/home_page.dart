@@ -1,4 +1,5 @@
 import 'package:fiancas/components/balance.dart';
+import 'package:fiancas/components/bottom_nav_bar.dart';
 import 'package:fiancas/components/general_value_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -81,6 +82,9 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(FontAwesomeIcons.plus),
+      ),
+      bottomNavigationBar: const BottomNavBar(
+        route: routeName,
       ),
     );
   }

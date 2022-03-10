@@ -21,24 +21,28 @@ class _BalanceState extends State<Balance> {
           'Saldo',
           style: balanceStyle(fontSize: 18.0),
         ),
-        SizedBox(
-          width: 140,
-          child: Card(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.baseline,
-              textBaseline: TextBaseline.alphabetic,
-              children: [
-                Text(
+        Card(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            mainAxisSize: MainAxisSize.min,
+            textBaseline: TextBaseline.alphabetic,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8.0, 4.0, 0.0, 4.0),
+                child: Text(
                   'R\$',
                   style: balanceStyle(fontSize: 14.0),
                 ),
-                Text(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Text(
                   format(widget.balanceValue),
                   style: balanceStyle(fontSize: 24.0),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         )
       ],

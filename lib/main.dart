@@ -1,4 +1,5 @@
 import 'package:fiancas/pages/home_page.dart';
+import 'package:fiancas/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         HomePage.routeName: (context) => const HomePage(),
+        SettingsPage.routeName: (context) => const SettingsPage(),
       },
     );
   }
