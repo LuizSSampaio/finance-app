@@ -1,3 +1,4 @@
+import 'package:fiancas/pages/creation_page.dart';
 import 'package:fiancas/pages/home_page.dart';
 import 'package:fiancas/pages/settings_page.dart';
 import 'package:flutter/material.dart';
@@ -16,13 +17,11 @@ class MyApp extends StatelessWidget {
           primary: const Color(0xFFA20AEA),
           secondary: const Color(0xFFA20AEA),
         ),
-        // appBarTheme: AppBarTheme(
-        //   backgroundColor: Colors.deepPurple.shade500,
-        // ),
       ),
       initialRoute: '/',
       routes: {
         HomePage.routeName: (context) => const HomePage(),
+        CreationPage.routeName: (context) => const CreationPage(),
         SettingsPage.routeName: (context) => const SettingsPage(),
       },
     );

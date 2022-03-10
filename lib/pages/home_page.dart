@@ -1,14 +1,20 @@
 import 'package:fiancas/components/balance.dart';
 import 'package:fiancas/components/bottom_nav_bar.dart';
 import 'package:fiancas/components/general_value_card.dart';
+import 'package:fiancas/pages/creation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   static const String routeName = '/';
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,11 +86,15 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            Navigator.pushNamed(context, CreationPage.routeName);
+          });
+        },
         child: const Icon(FontAwesomeIcons.plus),
       ),
       bottomNavigationBar: const BottomNavBar(
-        route: routeName,
+        route: HomePage.routeName,
       ),
     );
   }

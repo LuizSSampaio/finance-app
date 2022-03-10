@@ -9,7 +9,9 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text('Settings'),
+      body: Center(
+        child: Text('Settings Page'),
+      ),
       bottomNavigationBar: BottomNavBar(
         route: routeName,
       ),
