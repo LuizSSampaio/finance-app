@@ -18,9 +18,11 @@ ThemeData themeDark = ThemeData.dark().copyWith(
     primary: const Color(0xFFA20AEA),
     secondary: const Color(0xFFA20AEA),
   ),
-
   textTheme: const TextTheme(
     bodyText1: TextStyle(
+      color: Colors.white,
+    ),
+    headline6: TextStyle(
       color: Colors.white,
     ),
   ),
@@ -31,9 +33,11 @@ ThemeData themeLight = ThemeData.light().copyWith(
     primary: const Color(0xFFA20AEA),
     secondary: const Color(0xFFA20AEA),
   ),
-
   textTheme: const TextTheme(
     bodyText1: TextStyle(
+      color: Colors.black,
+    ),
+    headline6: TextStyle(
       color: Colors.black,
     ),
   ),

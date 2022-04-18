@@ -33,7 +33,12 @@ class GeneralValueCard extends StatelessWidget {
             Text(title),
             Text(
               format(revenue),
-              style: const TextStyle(color: Color(0xFFBBBBBB)),
+              style: TextStyle(
+                  color: Theme.of(context)
+                      .textTheme
+                      .headline6
+                      ?.color
+                      ?.withOpacity(0.65)),
             ),
           ],
         ),
