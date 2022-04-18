@@ -17,10 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   void _onItemTapped(int index) {
     int routeIndex = kNavigatorRoutes.indexOf(widget.route);
     setState(() {
-      if (routeIndex == routeIndex && index != routeIndex) {
-        Navigator.pushNamed(context, kNavigatorRoutes.elementAt(index));
-      } else if (routeIndex != routeIndex) {
-        Navigator.pop(context);
+      if (index != routeIndex) {
         Navigator.pushNamed(context, kNavigatorRoutes.elementAt(index));
       }
     });
