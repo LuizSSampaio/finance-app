@@ -1,3 +1,4 @@
+import 'package:fiancas/global_variables.dart';
 import 'package:fiancas/pages/creation_page.dart';
 import 'package:fiancas/pages/home_page.dart';
 import 'package:fiancas/pages/settings_page.dart';
@@ -12,12 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Finanças Pessoais',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: const Color(0xFFA20AEA),
-          secondary: const Color(0xFFA20AEA),
-        ),
-      ),
+      theme: themeLight,
+      darkTheme: themeDark,
       initialRoute: '/',
       routes: {
         HomePage.routeName: (context) => const HomePage(),

@@ -1,4 +1,3 @@
-import 'package:fiancas/global_variables.dart';
 import 'package:fiancas/logic/value_formater.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +11,13 @@ class Balance extends StatefulWidget {
 }
 
 class _BalanceState extends State<Balance> {
+  TextStyle balanceStyle({required double fontSize}) {
+    return TextStyle(
+      color: Theme.of(context).textTheme.bodyText1?.color,
+      fontSize: fontSize,
+      fontWeight: FontWeight.w900,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

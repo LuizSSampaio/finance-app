@@ -13,10 +13,28 @@ const List<String> kNavigatorRoutes = [
   SettingsPage.routeName,
 ];
 
-TextStyle balanceStyle({required double fontSize}) {
-  return TextStyle(
+ThemeData themeDark = ThemeData.dark().copyWith(
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+    primary: const Color(0xFFA20AEA),
+    secondary: const Color(0xFFA20AEA),
+  ),
+
+  textTheme: const TextTheme(
+    bodyText1: TextStyle(
       color: Colors.white,
-      fontSize: fontSize,
-      fontWeight: FontWeight.w900,
-  );
-}
+    ),
+  ),
+);
+
+ThemeData themeLight = ThemeData.light().copyWith(
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+    primary: const Color(0xFFA20AEA),
+    secondary: const Color(0xFFA20AEA),
+  ),
+
+  textTheme: const TextTheme(
+    bodyText1: TextStyle(
+      color: Colors.black,
+    ),
+  ),
+);
