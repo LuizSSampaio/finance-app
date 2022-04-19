@@ -1,7 +1,7 @@
 import 'package:fiancas/components/balance.dart';
 import 'package:fiancas/components/bottom_nav_bar.dart';
 import 'package:fiancas/components/general_value_card.dart';
-import 'package:fiancas/pages/creation_page.dart';
+import 'package:fiancas/views/creation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

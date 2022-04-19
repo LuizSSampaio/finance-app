@@ -1,7 +1,6 @@
-import 'package:fiancas/global_variables.dart';
-import 'package:fiancas/pages/creation_page.dart';
-import 'package:fiancas/pages/home_page.dart';
-import 'package:fiancas/pages/settings_page.dart';
+import 'package:fiancas/views/creation_page.dart';
+import 'package:fiancas/views/home_page.dart';
+import 'package:fiancas/views/settings_page.dart';
 import 'package:fiancas/themes.dart';
 import 'package:flutter/material.dart';
 
