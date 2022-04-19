@@ -37,7 +37,6 @@ dependencies:
   font_awesome_flutter: ^9.2.0
   number_display: ^3.0.0
   sqflite: ^2.0.2+1
-  path_provider: ^2.0.9
   path: ^1.8.0
 
 dev_dependencies:

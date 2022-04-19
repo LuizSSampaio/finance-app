@@ -1,3 +1,4 @@
+import 'package:fiancas/database/db_provider.dart';
 import 'package:flutter/material.dart';
 
 class CreationPage extends StatefulWidget {
@@ -106,9 +107,7 @@ class _CreationPageState extends State<CreationPage> {
                       return 'Digite um valor';
                     }
                     if (value.indexOf(',') != value.lastIndexOf(',') ||
-                        value.indexOf('.') != value.lastIndexOf('.') ||
-                        value.indexOf(',') != value.lastIndexOf('.') ||
-                        value.indexOf('.') != value.lastIndexOf(',')) {
+                        value.indexOf('.') != value.lastIndexOf('.')){
                       return 'Não utilize mais de um \'.\' ou \',\'';
                     }
                     return null;
@@ -120,10 +119,14 @@ class _CreationPageState extends State<CreationPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      print(_titleController.text + '\n' +
-                          _descriptionController.text +
-                          '\n' +
-                          _valueController.text);
+                      // dbProvider.addStatement(
+                      //   Statement(
+                      //     title: _titleController.text,
+                      //     description: _descriptionController.text,
+                      //     amount: double.parse(_valueController.text),
+                      //     type: selectedRevenueOrExpensesValue,
+                      //   ),
+                      // );
                     }
                   },
                   child: const Text('Adicionar'),
