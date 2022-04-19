@@ -21,8 +21,19 @@ class CreationPage extends StatefulWidget {
 
 class _CreationPageState extends State<CreationPage> {
   final _formKey = GlobalKey<FormState>();
+  final _titleController = TextEditingController();
+  final _descriptionController = TextEditingController();
+  final _valueController = TextEditingController();
 
   String selectedRevenueOrExpensesValue = 'revenue';
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    _descriptionController.dispose();
+    _valueController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +51,7 @@ class _CreationPageState extends State<CreationPage> {
             child: Column(
               children: [
                 TextFormField(
+                  controller: _titleController,
                   decoration: const InputDecoration(
                     labelText: 'Título *',
                     border: OutlineInputBorder(),
@@ -59,13 +71,18 @@ class _CreationPageState extends State<CreationPage> {
                     border: OutlineInputBorder(),
                   ),
                   items: CreationPage.revenueOrExpenses,
-                  onChanged: (String? value) {},
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedRevenueOrExpensesValue = value!;
+                    });
+                  },
                   value: selectedRevenueOrExpensesValue,
                 ),
                 const SizedBox(
                   height: 15.0,
                 ),
                 TextFormField(
+                  controller: _descriptionController,
                   decoration: const InputDecoration(
                     labelText: 'Descrição',
                     border: OutlineInputBorder(),
@@ -75,6 +92,7 @@ class _CreationPageState extends State<CreationPage> {
                   height: 15.0,
                 ),
                 TextFormField(
+                  controller: _valueController,
                   decoration: const InputDecoration(
                     labelText: 'Valor *',
                     border: OutlineInputBorder(),
@@ -88,7 +106,9 @@ class _CreationPageState extends State<CreationPage> {
                       return 'Digite um valor';
                     }
                     if (value.indexOf(',') != value.lastIndexOf(',') ||
-                        value.indexOf('.') != value.lastIndexOf('.')) {
+                        value.indexOf('.') != value.lastIndexOf('.') ||
+                        value.indexOf(',') != value.lastIndexOf('.') ||
+                        value.indexOf('.') != value.lastIndexOf(',')) {
                       return 'Não utilize mais de um \'.\' ou \',\'';
                     }
                     return null;
@@ -99,7 +119,12 @@ class _CreationPageState extends State<CreationPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {}
+                    if (_formKey.currentState!.validate()) {
+                      print(_titleController.text + '\n' +
+                          _descriptionController.text +
+                          '\n' +
+                          _valueController.text);
+                    }
                   },
                   child: const Text('Adicionar'),
                 ),
