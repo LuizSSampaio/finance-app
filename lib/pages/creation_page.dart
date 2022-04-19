@@ -10,7 +10,7 @@ class CreationPage extends StatefulWidget {
       value: 'revenue',
     ),
     DropdownMenuItem(
-      child: Text('Despesas'),
+      child: Text('Despesa'),
       value: 'expenses',
     ),
   ];
@@ -28,7 +28,7 @@ class _CreationPageState extends State<CreationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Adicionar Raceita ou Gasto'),
+        title: const Text('Adicionar Raceita ou Despesa'),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
       ),

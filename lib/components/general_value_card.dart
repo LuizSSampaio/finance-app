@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 class GeneralValueCard extends StatelessWidget {
   const GeneralValueCard({
     Key? key,
-    required this.revenue,
+    required this.value,
     required this.title,
     required this.icon,
-    required this.iconBackground,
+    required this.iconBackgroundColor,
+    this.iconColor,
   }) : super(key: key);
 
-  final double revenue;
+  final double value;
   final String title;
   final IconData icon;
-  final Color iconBackground;
+  final Color? iconColor;
+  final Color iconBackgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +25,16 @@ class GeneralValueCard extends StatelessWidget {
         leading: CircleAvatar(
           child: Icon(
             icon,
-            color: Colors.white,
+            color: (iconColor != null) ? iconColor : Colors.white,
           ),
-          backgroundColor: iconBackground,
+          backgroundColor: iconBackgroundColor,
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title),
             Text(
-              format(revenue),
+              format(value),
               style: TextStyle(
                   color: Theme.of(context)
                       .textTheme
