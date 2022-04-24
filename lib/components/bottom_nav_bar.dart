@@ -26,8 +26,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
       items: kNavigatorItems,
       currentIndex: kNavigatorRoutes.indexOf(widget.route),
       onTap: _onItemTapped,

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: themeLight,
       darkTheme: themeDark,
-      initialRoute: '/',
+      initialRoute: HomePage.routeName,
       routes: {
         HomePage.routeName: (context) => const HomePage(),
         CreationPage.routeName: (context) => const CreationPage(),
